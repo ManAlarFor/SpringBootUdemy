@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Document</title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+
+    <ul>
+
+        <li th:text="${user.name}"></li>
+        <li th:text="${user.lastName}"></li>
+        <li th:if="${user.email != null}" th:text="${user.email}"></li>
+        <li th:if="${(user.email == null)}" th:text="${'Sin email'}"></li>
+
+    </ul>
+
+    <a th:href="@{/list}">Ver listado</a>
+    <a th:href="@{/api/params/foo?message=Hola Caracola}">Ver Mensaje</a>
+    <a th:href="@{/api/params/foo(message='Hola Caracola')}">Ver Mensaje2</a>
+    <a th:href="@{/api/params/bar(text='Hola Caracola', code = 132)}">Ver Bar</a>
+    <a th:href="@{'/api/var/baz/' + ${title}}">Ver Calvaland</a>
+
+</body>
+</html>

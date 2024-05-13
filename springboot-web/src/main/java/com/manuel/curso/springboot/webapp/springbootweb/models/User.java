@@ -1,0 +1,48 @@
+package com.manuel.curso.springboot.webapp.springbootweb.models;
+
+public class User {
+
+    private String lastName ;
+    private String name ;
+    private String email ;
+
+
+    public User(String name, String lastName) {
+        this.name = name;
+        this.lastName = lastName;
+    }
+
+    public User() {}
+
+
+    public User(String lastName, String name, String email) {
+        this.lastName = lastName;
+        this.name = name;
+        this.email = email;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "price": 450,
+        "name": "Play Station 5"
+    },
+    {
+        "id": 2,
+        "price": 800,
+        "name": "SuperBall"
+    },
+    {
+        "id": 3,
+        "price": 11141241241241244468752,
+        "name": "Estrella De La Muerte"
+    },
+    {
+        "id": 4,
+        "price": 12,
+        "name": "Raton chulo"
+    }
+]
