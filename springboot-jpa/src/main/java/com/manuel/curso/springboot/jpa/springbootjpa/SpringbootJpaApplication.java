@@ -27,42 +27,40 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		subQueries();
+		int id ;
+		Scanner sc = new Scanner(System.in) ;
 
-//		int id ;
-//		Scanner sc = new Scanner(System.in) ;
-//
-//		System.out.println("Indique quiere realizar: \n\t1.Crear\n\t2.Actualizar\n\t3.Eliminar\n\t4.Buscar Usuarios\n\t5.Salir");
-//
-//		id = sc.nextInt() ;
-//
-//		switch (id) {
-//			case 1:
-//				create();
-//				break;
-//
-//			case 2:
-//				update();
-//				break;
-//
-//			case 3:
-//				delete2();
-//				break;
-//
-//			case 4:
-//				findOne() ;
-//				break;
-//
-//			case 5:
-//				System.out.println("Gracias por usar el sistema");;
-//				break;
-//
-//			default:
-//				System.out.println("Valor Inesperado");
-//				break;
-//		}
-//
-//		sc.close();
+		System.out.println("Indique quiere realizar: \n\t1.Crear\n\t2.Actualizar\n\t3.Eliminar\n\t4.Buscar Usuarios\n\t5.Salir");
+
+		id = sc.nextInt() ;
+
+		switch (id) {
+			case 1:
+				create();
+				break;
+
+			case 2:
+				update();
+				break;
+
+			case 3:
+				delete2();
+				break;
+
+			case 4:
+				findOne() ;
+				break;
+
+			case 5:
+				System.out.println("Gracias por usar el sistema");;
+				break;
+
+			default:
+				System.out.println("Valor Inesperado");
+				break;
+		}
+
+		sc.close();
 
 	}
 
