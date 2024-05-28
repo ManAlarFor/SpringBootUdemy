@@ -64,17 +64,21 @@ export const ProductApp = ({title}) => {
 
     return (
 
-        <div>
-            <h1>{title.text}</h1>
+        <div className='container my-4'>
+            <h2>{title.text}</h2>
 
-            <div className='container my-4 mb-5'>
+            <div className='row'>
 
-                <div>
+                <div className='col'>
                     <ProductForm handlerAdd={handlerAddProduct} productSelected={productSelected}/>
                 </div>
 
-                <div>
-                    <ProductGrid  products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/>
+                <div className='col'>
+                    {
+                        products.length != 0 ? <ProductGrid  products={products} handlerRemove={handlerRemoveProduct} handlerProductSelected={handlerProductSelected}/>
+                            : <div className='alert alert-warning'> No hay productos en el sistema!</div>
+                    }
+                    
                 </div>
             </div>
 

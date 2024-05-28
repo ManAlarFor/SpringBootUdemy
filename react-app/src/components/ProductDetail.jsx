@@ -6,23 +6,23 @@ export const ProductDetail = ({handlerProductSelected, handlerRemove, product={}
 
     return(
 
-        <div className='row'>
+        <tr>
 
-            <div className='col'>{product.name}</div>
-            <div className='col'>{product.price}</div>
-            <div className='col'>{product.description}</div>
-            <div className='col'>
-                <button className='rounded' onClick={() => handlerProductSelected(product.id)}>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+            <td>{product.description}</td>
+            <td>
+                <button className='btn btn-secondary  btn-sm rounded' onClick={() => handlerProductSelected(product.id)}>
                     Update
                 </button>
-            </div>
-            <div className='col'>
-                <button className='rounded' onClick={() => handlerRemove(product.id)}>
+            </td>
+            <td>
+                <button className='btn btn-danger  btn-sm rounded' onClick={() => handlerRemove(product.id)}>
                     Remove
                 </button>
-            </div>
+            </td>
 
-        </div>
+        </tr>
 
         );
 

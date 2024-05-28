@@ -5,6 +5,6 @@ import { ProductApp } from './components/ProductApp.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ProductApp title={{text: "Este es mi titulo"}} />
+    <ProductApp title={{text: "Productos"}} />
   </React.StrictMode>,
 )

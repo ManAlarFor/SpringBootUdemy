@@ -11,7 +11,7 @@ export const ProductForm = ({productSelected,handlerAdd}) => {
 
     let [form, setForm] = useState(productSelected);;
 
-    const {name, description, price} = form ;
+    const {id, name, description, price} = form ;
 
     useEffect(() => {
         setForm(productSelected) ;
@@ -36,6 +36,7 @@ export const ProductForm = ({productSelected,handlerAdd}) => {
         }}>
             <input
                 placeholder="Name"
+                className="form-control my-3 w-75"
                 name="name"
                 value={name}
                 type="text"
@@ -48,6 +49,7 @@ export const ProductForm = ({productSelected,handlerAdd}) => {
                 placeholder="Description"
                 name="description"
                 value={description}
+                className="form-control my-3 w-75"
                 type="text"
                 onChange={(event) => setForm({
                     ...form,
@@ -56,6 +58,7 @@ export const ProductForm = ({productSelected,handlerAdd}) => {
             />
             <input
                 placeholder="Price"
+                className="form-control my-3 w-75"
                 name="price"
                 value={price}
                 type="text"
@@ -65,9 +68,9 @@ export const ProductForm = ({productSelected,handlerAdd}) => {
                 })}
             />
 
-                <button type="submit" className="rounded text-danger">
+                <button type="submit" className="btn btn-primary">
 
-                    Save
+                    {id>0 ? "Update": "Create"}
 
                 </button>
 

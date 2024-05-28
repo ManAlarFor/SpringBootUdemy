@@ -6,24 +6,25 @@ export const ProductGrid = ({handlerProductSelected, handlerRemove, products = [
 
     return (
         <>
-            <div>
-                <div className="container text-center">
-                    <div className="row">
-                        <div className="col">name</div>
-                        <div className="col">price</div>
-                        <div className="col">descripcion</div>
-                        <div className="col">update</div>
-                        <div className="col">remove</div>
-                    </div>
-                </div>
-                <div className="row">
+            
+            <table className="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>price</th>
+                        <th>descripcion</th>
+                        <th>update</th>
+                        <th>remove</th>
+                    </tr>
+                </thead>
+                <tbody>
                     { products.map(product => {
-
+                        
                         return <ProductDetail handlerProductSelected={handlerProductSelected} handlerRemove={handlerRemove} product={product}  key={product.id}/>;
-
+                        
                     })}
-                </div>
-            </div>
+                </tbody>
+            </table>
 
         </>
     )
