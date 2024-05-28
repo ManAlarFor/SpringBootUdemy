@@ -19,7 +19,7 @@ export const ProductGrid = ({handlerProductSelected, handlerRemove, products = [
                 <div className="row">
                     { products.map(product => {
 
-                        return <ProductDetail handlerProductSelected={handlerProductSelected} handlerRemove={handlerRemove} product={product}  key={product.name}/>;
+                        return <ProductDetail handlerProductSelected={handlerProductSelected} handlerRemove={handlerRemove} product={product}  key={product.id}/>;
 
                     })}
                 </div>

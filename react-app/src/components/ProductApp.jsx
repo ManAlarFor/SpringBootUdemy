@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { useEffect, useState } from "react";
-import { listProduct } from "../services/ProductService";
+import { create, findAll, remove, update } from '../services/ProductService';
 import { ProductForm } from './ProductForm';
 import { ProductGrid } from "./ProductGrid";
 
@@ -14,22 +14,27 @@ export const ProductApp = ({title}) => {
         price: '',
     }) ;
 
+    const getProducts = async () => {
+        const result = await findAll() ;
+        setProducts(result.data._embedded.products) ;
+    }
+
     useEffect(() => {
-
-        const result = listProduct() ;
-
-        setProducts(result) ;
+        getProducts() ;
     }, [])
 
 
-    const handlerAddProduct = (product) => {
+    const handlerAddProduct = async (product) => {
         console.log(product) ;
 
-        if(products.includes(product)) {
+        if(product.id > 0) {
             
+
+            const response = await update(product) ;
+
             setProducts(products.map(prod => {
-                if(prod.name == product.name){
-                    return {...product}
+                if(prod.id == response.data.id){
+                    return {...response.data}
                 }
     
                 return prod ;
@@ -37,15 +42,20 @@ export const ProductApp = ({title}) => {
             }))
         } else {
 
-            setProducts([...products, {...product}]) ;
+            const response = await create(product) ;
+
+            setProducts([...products, {...response.data}]) ;
 
         }
 
     }
 
-    const handlerRemoveProduct = (name) => {
-        console.log(name) ;
-        setProducts(products.filter(product => product.name != name)) ;
+    const handlerRemoveProduct = (id) => {
+        console.log(id) ;
+
+        remove(id) ;
+
+        setProducts(products.filter(product => product.id != id)) ;
     }
 
     const handlerProductSelected = (product) => {

@@ -9,7 +9,7 @@ const initialDataForm = {
 // eslint-disable-next-line react/prop-types
 export const ProductForm = ({productSelected,handlerAdd}) => {
 
-    let [form, setForm] = useState(productSelected || initialDataForm);;
+    let [form, setForm] = useState(productSelected);;
 
     const {name, description, price} = form ;
 

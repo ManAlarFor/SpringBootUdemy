@@ -12,12 +12,12 @@ export const ProductDetail = ({handlerProductSelected, handlerRemove, product={}
             <div className='col'>{product.price}</div>
             <div className='col'>{product.description}</div>
             <div className='col'>
-                <button className='rounded' onClick={() => handlerProductSelected(product.name)}>
+                <button className='rounded' onClick={() => handlerProductSelected(product.id)}>
                     Update
                 </button>
             </div>
             <div className='col'>
-                <button className='rounded' onClick={() => handlerRemove(product.name)}>
+                <button className='rounded' onClick={() => handlerRemove(product.id)}>
                     Remove
                 </button>
             </div>
