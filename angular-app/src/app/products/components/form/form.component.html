@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit()">
+
+    <div>
+        <input class="form-control m-2" type="text" placeholder="Name" name="name" [(ngModel)]='product.name'>
+    </div>
+
+    <div>
+        <input class="form-control m-2" type="text" placeholder="Description" name="description" [(ngModel)]='product.description'>
+    </div>
+
+    
+    <div>
+        <input class="form-control m-2" type="number" placeholder="Price" name="price" [(ngModel)]='product.price'>
+    </div>
+    
+    <div>
+        <button class="btn btn-primary m-3">{{product.id>0 ? 'Update' : 'Create'}}</button>
+        <button class="btn btn-success m-3" (click)="clean()">Clean</button>
+    </div>
+</form>
